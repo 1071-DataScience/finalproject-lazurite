@@ -3,10 +3,10 @@ library(rpart.plot)
 library(rattle)
 library(caret)
 
-data <- read.csv("/Users/Lazurite/Desktop/DSproject/voice.csv")
+data <- read.csv("/Users/kuongchikuan/Desktop/finalproject-lazurite/data/voice.csv")
 set.seed(1111)
 
-#folds<-createFolds(y = data[,21],k=10)
+folds<-createFolds(y = data[,21],k=10)
 
 #max=0
 #num=0
@@ -20,20 +20,20 @@ set.seed(1111)
 #}
 #num<-which.max(auc_value)
 #print(auc_value)
-#testdata<-data[folds[[3]],]
-#traindata<-data[-folds[[3]],]
+testdata<-data[folds[[3]],]
+traindata<-data[-folds[[3]],]
 
-train.index <- sample(x=1:nrow(data), size=ceiling(0.8*nrow(data) ))
-train <- data[train.index, ]
-test <- data[-train.index, ]
+#train.index <- sample(x=1:nrow(data), size=ceiling(0.8*nrow(data) ))
+#traindata <- data[train.index, ]
+#testdata <- data[-train.index, ]
 
 ##RainTomorrow
 ##Marital_Status
-dtreeM <- rpart(formula = label ~ ., data = train, method = "class", control = rpart.control(cp = 0.001))
+dtreeM <- rpart(formula = label ~ ., data = traindata, method = "class", control = rpart.control(cp = 0.001))
 #cart.model<- rpart(RainTomorrow ~. , 
 #                   data=train)
 
-fancyRpartPlot(dtreeM)
+#fancyRpartPlot(dtreeM)
 result <- predict(dtreeM, newdata = testdata, type = "class")
 
 cm <- table(testdata$label, result, dnn = c("now", "pred"))
@@ -42,7 +42,7 @@ cm[4] / sum(cm[, 2])
 cm[1] / sum(cm[, 1])
 
 accuracy <- sum(diag(cm)) / sum(cm)
-accuracy#0.979
+accuracy#0.969
 
 
 #t_pred=predict(dtreeM,test,type="class")

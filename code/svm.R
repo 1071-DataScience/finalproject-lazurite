@@ -1,9 +1,9 @@
 library(e1071)
 library(caret)
-library(pROC)
-data <- read.csv("/Users/Lazurite/Desktop/DSproject/voice.csv")
+data <- read.csv("/Users/kuongchikuan/Desktop/finalproject-lazurite/data/voice.csv")
 set.seed(1111)
-#folds<-createFolds(y = data[,21],k=20)
+
+folds<-createFolds(y = data[,21],k=10)
 
 #max=0
 #num=0
@@ -17,14 +17,14 @@ set.seed(1111)
 #}
 #num<-which.max(auc_value)
 #print(auc_value)
-#testdata<-data[folds[[13]],]
-#traindata<-data[-folds[[13]],]
+testdata<-data[folds[[3]],]
+traindata<-data[-folds[[3]],]
 
 
-n <- nrow(data)
-t_idx <- sample(seq_len(n), size = round(0.8 * n))
-traindata <- data[t_idx,]
-testdata <- data[ - t_idx,]
+#n <- nrow(data)
+#t_idx <- sample(seq_len(n), size = round(0.8 * n))
+#traindata <- data[t_idx,]
+#testdata <- data[ - t_idx,]
 trainLabels <- traindata$label
 
 svmM <- svm(label ~ ., data = traindata, probability = TRUE)
