@@ -21,6 +21,7 @@ Rscript code/your_script.R --input data/training --output results/performance.ts
 * Your presentation, 1071_datascience_FP_<yourID|groupName>.ppt/pptx/pdf, by **Jan. 15**
 * Any related document for the final project
   * papers
+        https://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf
   * software user guide
 
 ### data
@@ -34,6 +35,7 @@ Rscript code/your_script.R --input data/training --output results/performance.ts
 ### code
 
 * Which method do you use?
+    libsvm
 * What is a null model for comparison?
 * How do your perform evaluation? ie. Cross-validation, or extra separated data
 
