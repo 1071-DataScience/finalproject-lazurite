@@ -1,47 +1,33 @@
-# < Title of your final project >
+# < Gender Recognition by Voice >
 
 ### Groups
-* < name, student ID1 >
-* < name, student ID2 >
-* < name, student ID3 >
+* < 鄭博仁, 107753017 >
+* < 鄺芷君, 107753045 >
 
 ### Goal
-A breif introduction about your project, i.e., what is your goal?
+*The final goal of this project is to Identify a voice as male or female
 
 ### demo 
-You should provide an example commend to reproduce your result
-```R
-Rscript code/your_script.R --input data/training --output results/performance.tsv
-```
-* any on-line visualization
+*commend: Rscript Rscript sum.R voice.csv train/test
 
-## Folder organization and its related information
+*on-line visualization: shiny
 
 ### docs
-* Your presentation, 1071_datascience_FP_<yourID|groupName>.ppt/pptx/pdf, by **Jan. 15**
-* Any related document for the final project
+* presentation: 1071_datascience_FP_<107753017,107753045>.pptx
+* related document for the final project
   * papers
         https://www.csie.ntu.edu.tw/~cjlin/papers/libsvm.pdf
-  * software user guide
 
 ### data
-
-* Source
-* Input format
-* Any preprocessing?
-  * Handle missing data
-  * Scale value
+* voice.csv
+* Input format: .csv
 
 ### code
-
-* Which method do you use?
-    libsvm
-* What is a null model for comparison?
-* How do your perform evaluation? ie. Cross-validation, or extra separated data
+* method: libsvm
+* comparison?: ROC curve and other methods of machine learning
+* perform evaluation? 10 folds Cross-validation, extra separated data
 
 ### results
 
-* Which metric do you use 
-  * precision, recall, R-square
-* Is your improvement significant?
-* What is the challenge part of your project?
+* metric: Sensitivity, Specificity,Accuracy
+* challenge: lack of datas, and cross validation didn’t work as well as we thought.

@@ -1,0 +1,25 @@
+Confusion Matrix and Statistics
+
+          Reference
+Prediction female male
+    female    147    7
+    male        1  162
+                                         
+               Accuracy : 0.9748         
+                 95% CI : (0.9509, 0.989)
+    No Information Rate : 0.5331         
+    P-Value [Acc > NIR] : <2e-16         
+                                         
+                  Kappa : 0.9494         
+ Mcnemar's Test P-Value : 0.0771         
+                                         
+            Sensitivity : 0.9932         
+            Specificity : 0.9586         
+         Pos Pred Value : 0.9545         
+         Neg Pred Value : 0.9939         
+             Prevalence : 0.4669         
+         Detection Rate : 0.4637         
+   Detection Prevalence : 0.4858         
+      Balanced Accuracy : 0.9759         
+                                         
+       'Positive' Class : female      
